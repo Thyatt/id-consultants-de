@@ -1,0 +1,18 @@
+global: &global
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  min_messages: warning
+  encoding: utf8
+
+development:
+  database: id_consultants_development
+  <<: *global
+
+test: &test
+  database: id_consultants_test<%=ENV['TEST_ENV_NUMBER']%>
+  <<: *global
+
+production:
+  database: id_consultants_production
+  <<: *global
