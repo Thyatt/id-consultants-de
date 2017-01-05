@@ -5,6 +5,11 @@ body{
   font-size: 16px;
   max-width: 1440px;
   margin: 0 auto;
+  color: $black;
+  a{
+    color: $black;
+    text-decoration: none;
+  }
   nav{
     .top-nav{
 
@@ -14,22 +19,40 @@ body{
       .nav-item{
         display: inline-block;
         margin: .5em 1em;
+        color: $darkGrey;
+        @include transition(.3s);
+        &:hover{
+          color: $red;
+        }
       }
     }
   }
+  .clear{
+    clear: both;
+  }
+  .content{
+    width: 90%;
+    margin: 0 auto;
+  }
   footer{
+    background: $red;
+    padding: 1em 0;
+    display: block;
     .footer-content{
       margin: 1em 0;
       text-align: center;
       .divider{
         width: 1px;
         height:1em;
-        background: black;
+        background: white;
+        position: relative;
+        top: 3px;
         display: inline-block;
         margin: 0 1em;
       }
       .footer-item{
         display: inline-block;
+        color: white;
       }
     }
   }

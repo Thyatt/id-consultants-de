@@ -1,0 +1,34 @@
+$black: #565656;
+
+$red: #76323F;
+$tan: #C09F80;
+$darkGrey: #919394;
+$grey: #D7CEC7;
+
+
+@mixin respond-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin transition($time) {
+  -webkit-transition: $time;
+  -moz-transition: $time;
+  -ms-transition: $time;
+  transition: $time;
+}
+
+@mixin vertical-align() {
+  position: relative;
+  margin-top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

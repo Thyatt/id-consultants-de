@@ -1,0 +1,31 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#physicians{
+  .physician{
+
+    .column{
+      display: block;
+      width: 50%;
+      text-align: center;
+      &.left{
+        float: left;
+      }
+      &.right{
+        float: right;
+      }
+    }
+    .dropdown-content{
+      text-align: left;
+      .title{
+        cursor: pointer;
+      }
+      .dropdown{
+        display: none;
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
