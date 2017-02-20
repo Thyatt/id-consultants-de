@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 ruby '2.1.5'
 
 gem 'rails', '~>4.0'            # Ruby on Rails framework
@@ -20,7 +20,7 @@ gem 'activeadmin', github: 'activeadmin'
 # gem 'aws-sdk'             # For storing uploaded files on S3
 
 # User handling:
-# gem 'devise'              # For creating and managing users
+gem 'devise'              # For creating and managing users
 
 # Social Services: 
 # gem 'omniauth-facebook'   # For gaining Facebook authentication
