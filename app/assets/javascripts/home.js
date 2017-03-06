@@ -1,26 +1,18 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
-    physicianDropdown();
+    physicianBio();
 });
 
-function physicianDropdown(){
-    $('.dropdown-wrapper .title').click(function(){
-        var $this = $(this),
-            $dropdown = $this.parent().children('.dropdown');
-
-
-
-        if(!$dropdown.hasClass('active')){
-            $('.dropdown').slideUp(300);
-            $('.dropdown').removeClass('active')
-
-            $dropdown.addClass('active')
-            $dropdown.slideDown(300);
-        }
-        else{
-            $('.dropdown').slideUp(300);
-            $('.dropdown').removeClass('active')
+function physicianBio(){
+    $('.bio-nav a').click(function(e){
+        e.preventDefault();
+        if(!$(this).hasClass('active')){
+            var section = $(this).attr('class');
+            $(this).parent().find('a').removeClass("active");
+            $(this).addClass("active");
+            $(this).parent().parent().find('.bio-content div').removeClass('show')
+            $(this).parent().parent().find('.bio-content .' + section).addClass('show')
         }
     })
 }

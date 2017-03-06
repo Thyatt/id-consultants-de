@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #physicians{
+  .physicians{
+    margin: 0 auto;
+  }
   .physician{
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -12,26 +15,60 @@
     -webkit-box-align: center;
 
     align-items: center;
+    .name{
+      width:100%;
+      display: block;
+      text-align: center;
+    }
     .column{
       display: block;
-      width: 50%;
       text-align: center;
+      img{
+        width: 450px;
+      }
       &.left{
         float: left;
+        text-align: left;
       }
       &.right{
         float: right;
+        text-align: right;
+      }
+      &.img{
+        width: 450px;
+      }
+      &.info{
+        width: calc(100% - 450px);
       }
     }
-    .dropdown-content{
-      text-align: left;
-      .title{
-        cursor: pointer;
+    .bio-wrapper{
+      .bio-nav{
+        width: 15%;
+        display: block;
+        float: left;
+        text-align: left;
+        margin-left: 5%;
+        a{
+          display: block;
+          margin: 15px 0;
+        }
       }
-      .dropdown{
-        display: none;
-        p{
-          margin: 0;
+      .bio-content{
+        width: 80%;
+        display: block;
+        position: relative;
+        text-align: left;
+        float: left;
+        div{
+          position: absolute;
+          top:0;
+          left: 0;
+          z-index: 1;
+          opacity: 0;
+          @include transition(.3s);
+          &.show{
+            opacity:1;
+          }
         }
       }
     }

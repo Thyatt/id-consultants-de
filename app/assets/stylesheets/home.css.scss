@@ -3,9 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #home{
   .block{
-    width: 50%;
+    width: 25%;
     display: block;
     float: left;
-    text-align: center;
+    text-align: left;
+    box-sizing: border-box;
+    margin: 2em 0;
+    padding: 2em 1em;
+    &.about{
+    }
+    &.learn{
+    }
+    .link{
+      color: $darkBlue;
+      border-bottom: 2px solid transparent;
+      display: inline-block;
+      margin: 1em 0;
+      border: 2px solid $darkBlue;
+      padding: .5em 1.5em;
+      @include transition(.3s);
+      &:hover{
+        border-bottom: 2px solid $darkBlue;
+      }
+    }
   }
 }

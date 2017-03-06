@@ -30,17 +30,17 @@
         float: left;
       }
     }
-    &.secondary{
-      .map{
-        float: right;
-      }
-    }
     .map{
       width: 50%;
       height:400px;
     }
   }
+  .secondary, .suggestions{
+    width: 50%;
+    float: left;
+  }
   textarea{
     resize: none;
+    width: 100%;
   }
 }

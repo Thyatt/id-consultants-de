@@ -1,10 +1,13 @@
 $black: #565656;
-
+$brightRed: #F01E3D;
 $red: #96858F;
+$darkBlue: #003A69;
 $blue: #6D7993;
 $grey: #9099A2;
 $lightGrey: #D5D5D5;
 
+$bold: 'Hammersmith One';
+$body: 'Josefin Sans';
 
 @mixin respond-min($width) {
   @media screen and (min-width: $width) {
