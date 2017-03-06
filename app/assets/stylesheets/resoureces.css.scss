@@ -1,0 +1,46 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#contact{
+  .office{
+    text-align: center;
+    .wrapper{
+      text-align: center;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+
+      align-items: center;
+    }
+    h1{
+      display: inline-block;
+    }
+    .office-info{
+      width: 40%;
+      margin: 0 auto;
+
+      text-align: left;
+    }
+    &.main{
+      .map{
+        float: left;
+      }
+    }
+    &.secondary{
+      .map{
+        float: right;
+      }
+    }
+    .map{
+      width: 50%;
+      height:400px;
+    }
+  }
+  textarea{
+    resize: none;
+  }
+}
