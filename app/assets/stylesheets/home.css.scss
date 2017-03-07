@@ -23,7 +23,8 @@
       padding: .5em 1.5em;
       @include transition(.3s);
       &:hover{
-        border-bottom: 2px solid $darkBlue;
+        color: $brightRed;
+        border-color: $brightRed;
       }
     }
   }

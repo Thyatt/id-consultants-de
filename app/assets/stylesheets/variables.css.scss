@@ -6,8 +6,13 @@ $blue: #6D7993;
 $grey: #9099A2;
 $lightGrey: #D5D5D5;
 
-$bold: 'Hammersmith One';
-$body: 'Josefin Sans';
+@mixin serif(){
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin sansSerif(){
+  font-family: 'Roboto', sans-serif;
+}
 
 @mixin respond-min($width) {
   @media screen and (min-width: $width) {
