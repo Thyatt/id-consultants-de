@@ -24,7 +24,7 @@
       display: block;
       text-align: center;
       img{
-        width: 450px;
+        width: 100%;
       }
       &.left{
         float: left;
@@ -35,10 +35,10 @@
         text-align: right;
       }
       &.img{
-        width: 450px;
+        width: 40%;
       }
       &.info{
-        width: calc(100% - 450px);
+        width: 60%;
       }
     }
     .bio-wrapper{
@@ -48,23 +48,35 @@
         float: left;
         text-align: left;
         margin-left: 5%;
+        text-align: center;
         a{
           display: block;
-          margin: 15px 0;
+          padding: 15px 0;
+          position: relative;
+          left: 1px;
+          border: 1px solid $darkBlue;
+          background: white;
+          z-index:1;
+          &.active{
+            border-right: 1px solid white;
+          }
         }
       }
       .bio-content{
-        width: 80%;
+        width: calc(70% - 2px);
         display: block;
         position: relative;
         text-align: left;
         float: left;
+        border: 1px solid $darkBlue;
         div{
           position: absolute;
           top:0;
           left: 0;
           z-index: 1;
           opacity: 0;
+          display: border-box;
+          padding: 0 25px;
           @include transition(.3s);
           &.show{
             opacity:1;

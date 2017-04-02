@@ -2,7 +2,29 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
     physicianBio();
+    sizeBio();
 });
+
+function sizeBio(){
+  $('.bio-content').each(function(e){
+    var $this = $(this),
+        $nav = $(this).prev();
+    $this.css({
+      height: $this.find('.about').height() + 50
+    })
+
+    $nav.css({
+      marginTop: ($this.height() - $nav.height())/2
+    })
+
+    $this.find('div').each(function(e){
+      $(this).css({
+        paddingTop: ($this.height() - $(this).height())/2
+      })
+
+    })
+  })
+}
 
 function physicianBio(){
     $('.bio-nav a').click(function(e){
