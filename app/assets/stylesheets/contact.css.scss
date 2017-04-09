@@ -35,9 +35,25 @@
       height:400px;
     }
   }
+  .directions{
+    color: $brightRed;
+    text-decoration: underline;
+  }
+  .divider{
+    margin-bottom: 1.5em;
+  }
   .secondary, .suggestions{
     width: 50%;
     float: left;
+    .office-info{
+      width: 80%;
+      h6{
+        color: $darkBlue;
+        margin: 0;
+        font-size: 1em;
+        margin-bottom: 1em;
+      }
+    }
   }
   .suggestions{
     h6{

@@ -4,6 +4,9 @@ $(document).ready(function() {
     physicianBio();
     sizeBio();
     contactForm();
+  $(window).resize(function(){
+    sizeBio();
+  })
 });
 
 function contactForm(){

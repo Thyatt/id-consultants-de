@@ -3,10 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #resources{
   a{
-    color: $darkBlue;
+    color: $brightRed;
     border-bottom: 2px solid transparent;
-    display: inline-block;
-    margin: 1em 0;
+    display: inline;
     display: inline-block;
     @include transition(.3s);
     &:hover{
@@ -19,5 +18,11 @@
   .block{
     padding: 0 1em;
     margin-top: 0;
+  }
+  .further{
+    .link{
+      margin: 5px 0;
+      display: block;
+    }
   }
 }
