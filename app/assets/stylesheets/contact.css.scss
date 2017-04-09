@@ -39,8 +39,39 @@
     width: 50%;
     float: left;
   }
+  .suggestions{
+    h6{
+      margin: 5px 0 0 0;
+      color: $brightRed;
+    }
+    #contact-submit{
+      color: $darkBlue;
+      border-bottom: 2px solid transparent;
+      display: inline-block;
+      margin: 1em 0;
+      border: 2px solid $darkBlue;
+      padding: .5em 1.5em;
+      @include transition(.3s);
+      &:hover{
+        color: $brightRed;
+        border-color: $brightRed;
+      }
+    }
+    .thanks{
+      display: none;
+      text-align: center;
+      color: $brightRed;
+      margin-top: 3em;
+    }
+    p{
+      margin: 1em 0 0 0;
+    }
+  }
   textarea{
     resize: none;
     width: 100%;
+    height: 200px;
+    border: 1px solid $darkBlue;
+    padding: 5px;
   }
 }

@@ -11,5 +11,5 @@ IdConsultants::Application.routes.draw do
   match '/appointments', to: 'home#appointments', as: :appointments, via: [:get]
   match '/resources', to: 'home#resources', as: :resources, via: [:get]
   match '/contact', to: 'home#contact', as: :contact, via: [:get]
-
+  match '/comment', to: 'home#comment', as: :comment, via: [:post]
 end

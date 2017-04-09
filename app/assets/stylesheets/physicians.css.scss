@@ -5,6 +5,17 @@
   .physicians{
     margin: 0 auto;
   }
+  h2{
+    text-align: center;
+    display: block;
+    margin: 0;
+    margin-bottom: 0;
+    color: $darkBlue;
+    padding: 1em 0 .5em;
+  }
+  .divider{
+    margin-bottom: 2em;
+  }
   .physician{
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -15,6 +26,10 @@
     -webkit-box-align: center;
 
     align-items: center;
+    padding-bottom: 1em;
+    &.grey{
+      background: white;
+    }
     .name{
       width:100%;
       display: block;
@@ -25,6 +40,7 @@
       text-align: center;
       img{
         width: 100%;
+        display: block;
       }
       &.left{
         float: left;
@@ -43,22 +59,38 @@
     }
     .bio-wrapper{
       .bio-nav{
-        width: 15%;
+        width: 20%;
         display: block;
         float: left;
         text-align: left;
         margin-left: 5%;
-        text-align: center;
         a{
           display: block;
-          padding: 15px 0;
+          position: relative;
+          padding: 15px 0 15px 10px;
           position: relative;
           left: 1px;
           border: 1px solid $darkBlue;
-          background: white;
           z-index:1;
+          color: $darkBlue;
           &.active{
             border-right: 1px solid white;
+            background: white;
+            color: $brightRed;
+          }
+          &:hover{
+            i{
+              transform: translateX(5px);
+            }
+
+          }
+          i{
+            position: absolute;
+            right: 15px;
+            top: 11px;
+            font-size: 1.7em;
+            @include transition(.1s);
+            transform: translateX(0px);
           }
         }
       }
@@ -76,7 +108,7 @@
           z-index: 1;
           opacity: 0;
           display: border-box;
-          padding: 0 25px;
+          padding: 0 30px;
           @include transition(.3s);
           &.show{
             opacity:1;

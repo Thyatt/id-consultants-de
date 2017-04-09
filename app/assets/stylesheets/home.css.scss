@@ -2,5 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #home{
-
+  .block{
+    margin-top: 0;
+  }
+  .callout-block{
+    background: $lightGrey;
+    padding: 2em;
+    display: block;
+    box-sizing: border-box;
+    span{
+      color: $brightRed;
+      font-size: 1.3em;
+    }
+  }
 }

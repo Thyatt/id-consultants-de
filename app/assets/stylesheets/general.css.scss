@@ -14,6 +14,7 @@ body{
   }
   nav{
     height: 150px;
+    position: relative;
     .top-nav{
       display: block;
       float: left;
@@ -27,6 +28,13 @@ body{
           width: 100%;
         }
       }
+    }
+    .patient-portal{
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      @include serif;
+      font-size: .9em;
     }
     .main-nav{
       text-align: right;
@@ -63,6 +71,7 @@ body{
   }
   .header{
     position: relative;
+    margin-bottom: 2em;
     .callout{
       position: absolute;
       bottom: 15%;
@@ -76,6 +85,8 @@ body{
       box-sizing: border-box;
       h1, h4{
         color: white;
+        background: none;
+        margin-bottom: 0;
       }
     }
     img{
@@ -90,6 +101,7 @@ body{
     background: $darkBlue;
     display: inline-block;
     width: 100%;
+    margin-top: 1em;
     .contact-block{
       width: 100%;
       color: white;
@@ -101,6 +113,7 @@ body{
         padding-bottom: 3em;
         border-bottom: 1px solid white;
         margin-bottom: 1em;
+        margin-top: 0;
         &.left{
           border-right: 1px solid white;
         }
@@ -142,6 +155,10 @@ body{
       color: $red;
     }
   }
+  h5{
+    font-size: 1.3em;
+    margin: 0.5em 0;
+  }
 }
 .block{
   width: calc(100% / 3);
@@ -177,23 +194,34 @@ body{
   background: $brightRed;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#F01E3D), to(#fff));
   margin: .5em 0;
+  &.spacer{
+    margin: 3em 0;
+  }
 }
 
 p{
   @include serif;
+  line-height: 1.5em;
 }
 
 h1{
   text-align: center;
   display: block;
-  color: $darkBlue;
+  color: white;
+  background: $darkBlue;
+  margin: 0 0 1em 0;
+  padding: 1em 0;
 }
 
 h2{
   font-weight: 200;
   margin: 1em 0 0 0;
+  color: $darkBlue;
 }
 
+h3{
+  color: $brightRed;
+}
 h1, h2, h3, h4, h5, h6{
   font-weight: 400;
   @include sansSerif;
@@ -201,4 +229,26 @@ h1, h2, h3, h4, h5, h6{
 
 a {
   outline: 0 !important;
+}
+span.bold{
+  font-weight: 800;
+  color: black;
+}
+.forms{
+  border: 1px solid $darkBlue;
+  margin: 2em 0;
+  .column{
+    padding: 2em 0;
+    width: 50%;
+    display: block;
+    float: left;
+    text-align: center;
+    &.left{
+      width: calc(50% - 1px);
+      border-right: 1px solid $darkBlue;
+    }
+  }
+  h3{
+    margin-top: 0;
+  }
 }

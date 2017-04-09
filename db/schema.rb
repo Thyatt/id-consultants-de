@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220234213) do
+ActiveRecord::Schema.define(version: 20170409213808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20170220234213) do
   end
 
   create_table "patient_comments", force: true do |t|
-    t.string   "contact_email"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
