@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #physicians{
+  margin-bottom: 2em;
   .physicians{
     margin: 0 auto;
   }
@@ -27,6 +28,9 @@
 
     align-items: center;
     padding-bottom: 1em;
+    @include respond-max($tablet){
+      width: 100%;
+    }
     &.grey{
       background: white;
     }
@@ -52,9 +56,15 @@
       }
       &.img{
         width: 35%;
+        @include respond-max($tablet){
+          width: 100%;
+        }
       }
       &.info{
         width: 65%;
+        @include respond-max($tablet){
+          width: 100%;
+        }
       }
     }
     .bio-wrapper{

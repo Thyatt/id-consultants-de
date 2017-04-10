@@ -6,7 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Comments" do
           ul do
-            PatientComment.order(created_at: :desc).limit(5).map do |comment|
+            PatientComment.where.not(read: true).order(created_at: :desc).limit(25).map do |comment|
               li link_to(comment.comment, "/admin/patient_comments/"+comment.id.to_s)
             end
           end

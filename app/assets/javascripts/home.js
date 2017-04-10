@@ -13,21 +13,22 @@ function contactForm(){
   $('#contact-submit').click(function(e) {
     e.preventDefault();
     var text = $("textarea").val();
-
-    $.ajax({
-      method: 'POST',
-      url: '/comment',
-      data: {
-        text: text
-      },
-      success: function(data) {
-        console.log(data == true)
-        if(data == true){
-          $('textarea, #contact-submit, .suggestions p, .suggestions h6').fadeOut();
-          $('.thanks').fadeIn();
+    if(text != ''){
+      $.ajax({
+        method: 'POST',
+        url: '/comment',
+        data: {
+          text: text
+        },
+        success: function(data) {
+          console.log(data == true)
+          if(data == true){
+            $('textarea, #contact-submit, .suggestions p, .suggestions h6').fadeOut();
+            $('.thanks').fadeIn();
+          }
         }
-      }
-    })
+      })
+    }
   });
 
 }
