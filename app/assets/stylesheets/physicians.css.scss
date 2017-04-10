@@ -90,6 +90,8 @@
           }
           &:hover{
             i{
+              -webkit-transform: translateX(5px);
+              -ms-transform: translateX(5px);
               transform: translateX(5px);
             }
 
@@ -100,6 +102,8 @@
             top: 11px;
             font-size: 1.7em;
             @include transition(.1s);
+            -webkit-transform: translateX(0px);
+            -ms-transform: translateX(0px);
             transform: translateX(0px);
           }
         }

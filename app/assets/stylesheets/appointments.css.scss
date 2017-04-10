@@ -3,4 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #appointments{
   margin-bottom: 2em;
+  .forms{
+    h3{
+      margin-bottom: 10px;
+    }
+    a{
+      color: $darkBlue;
+      text-decoration: underline;
+      display: inline-block;
+      margin: 0 8px;
+      @include transition(.2s);
+      &:hover{
+        color: $brightRed;
+      }
+    }
+  }
 }
