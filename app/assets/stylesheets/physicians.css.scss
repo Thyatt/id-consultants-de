@@ -115,6 +115,11 @@
         text-align: left;
         float: left;
         border: 1px solid $darkBlue;
+        .licenses, .training, .education{
+          span{
+            margin-top: 5px;
+          }
+        }
         div{
           position: absolute;
           top:0;
