@@ -128,6 +128,12 @@
             opacity:1;
           }
         }
+        .link{
+          color: $darkBlue;
+          display: block;
+          text-decoration: underline;
+          margin: 10px 0;
+        }
       }
     }
   }

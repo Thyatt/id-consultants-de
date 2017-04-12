@@ -4,8 +4,11 @@ $(document).ready(function() {
     physicianBio();
     sizeBio();
     contactForm();
+    overlayListener();
+    sizeOverlay();
   $(window).resize(function(){
     sizeBio();
+    sizeOverlay();
   })
 });
 
@@ -109,4 +112,44 @@ function initGoogleMap(){
     });
     map2.setOptions({styles: styles2});
 
+}
+
+function overlayListener(){
+  $('.bio-more').click(function(e){
+    e.preventDefault();
+    showOverlay();
+    if($(this).hasClass("wes")){
+      $('.extended.wes-bio').addClass('show');
+    }
+    else{
+      $('.extended.jim-bio').addClass('show');
+    }
+    $('.site-overlay').find('.close').click(function(e){
+      e.preventDefault();
+      hideOverlay();
+      $('.extended').removeClass('show')
+    })
+  })
+}
+
+function showOverlay(){
+
+  $('.site-overlay').addClass('open');
+  $('body').css({
+    overflow: 'hidden'
+  })
+}
+
+function hideOverlay(){
+  $('.site-overlay').removeClass('open');
+  $('body').css({
+    overflow: 'visible'
+  })
+}
+
+
+function  sizeOverlay(){
+  $('.site-overlay').css({
+    height: $(window).height()
+  })
 }
