@@ -6,27 +6,58 @@ $(document).ready(function() {
     contactForm();
     overlayListener();
     sizeOverlay();
+    infusionCarousel();
+    mobileNav();
   $(window).resize(function(){
     sizeBio();
     sizeOverlay();
   })
 });
 
+function mobileNav() {
+    $('#mobile-nav').click(function(){
+        $('#mobile-nav-drawer, #mobile-nav').toggleClass('open');
+    });
+}
+
+function infusionCarousel() {
+    var $owl = $('#carousel').owlCarousel({
+        autoplay: true,
+        startPosition: 3,
+        center: true,
+        loop: true,
+        dots: true,
+        margin: 20,
+        stagePadding: 50,
+        responsive : {
+                0 : {
+                    items: 1
+                },
+                768 : {
+                    items: 3
+                 }
+        }
+    })
+}
+
 function contactForm(){
   $('#contact-submit').click(function(e) {
     e.preventDefault();
-    var text = $("textarea").val();
+    var text = $("textarea").val(),
+        contact = $("input.contact").val();
+
     if(text != ''){
       $.ajax({
         method: 'POST',
         url: '/comment',
         data: {
-          text: text
+          text: text,
+            contact: contact
         },
         success: function(data) {
           console.log(data == true)
           if(data == true){
-            $('textarea, #contact-submit, .suggestions p, .suggestions h6').fadeOut();
+            $('textarea, .contact, #contact-submit, .suggestions p, .suggestions h6').fadeOut();
             $('.thanks').fadeIn();
           }
         }

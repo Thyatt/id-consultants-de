@@ -12,18 +12,52 @@ body{
     color: $black;
     text-decoration: none;
   }
+  section {
+    @include respond-max($tablet){
+      margin-top: 73px;
+    }
+  }
   nav{
     height: 150px;
     position: relative;
+    @include respond-max($desktop){
+      height: initial;
+    }
+    @include respond-max($tablet){
+      height: initial;
+      position: fixed;
+      z-index: 1;
+      width: 100%;
+      background: white;
+      top: 0;
+    }
     .top-nav{
       display: block;
       float: left;
       margin-left: 30px;
       width: 250px;
+      @include respond-max($tablet){
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
       #logo{
         display: inline-block;
         width: 250px;
         padding: calc((146px - 113px)/2) 0;
+        @include respond-max($desktop){
+          padding: 0;
+          margin: 30px 0 30px 30px;
+
+          width: 150px;
+        }
+        @include respond-max($tablet){
+          padding: 0;
+          width: 90px;
+          display: block;
+          margin: 20px 30px 10px 30px;
+          float: right;
+        }
         img{
           width: 100%;
         }
@@ -37,9 +71,6 @@ body{
       font-size: .9em;
     }
     .main-nav{
-      @include respond-max($tablet){
-        display: none;
-      }
       text-align: right;
       display: block;
       width: calc(100% - 310px);
@@ -47,6 +78,15 @@ body{
       line-height: 150px;
       margin-right: 30px;
       float: left;
+      @include respond-max($desktop){
+        width: 100%;
+        text-align: center;
+        height: 70px;
+        line-height: 0;
+      }
+      @include respond-max($tablet){
+        display: none;
+      }
       .nav-divider{
         width: 1px;
         height: 30px;
@@ -58,11 +98,15 @@ body{
       }
       .nav-item{
         display: inline-block;
-        margin: 0 2em;
+        margin: 0 1.5em;
         color: $black;
         text-decoration: none;
         @include sansSerif;
         @include transition(.3s);
+
+        @include respond-max($desktopSmall){
+          margin: 0 0.8em;
+        }
         &:hover{
           color: $brightRed;
         }
@@ -76,6 +120,9 @@ body{
       font-size: .7em;
       text-decoration: underline;
       color: $darkBlue;
+      @include respond-max($tablet){
+        display: none;
+      }
     }
   }
   .clear{
@@ -95,6 +142,9 @@ body{
       color: white;
       padding: 30px;
       box-sizing: border-box;
+      @include respond-max($tablet){
+        display: none;
+      }
       h1, h4{
         color: white;
         background: none;
@@ -404,4 +454,142 @@ span.bold{
   transform: scale(1);
   -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
   transition: transform 0.4s, opacity 0.4s;
+}
+
+
+#mobile-nav {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  display: none;
+  @include respond-max($tablet){
+    display: block;
+  }
+}
+
+#mobile-nav span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: black;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#mobile-nav span:nth-child(1) {
+  top: 0px;
+}
+
+#mobile-nav span:nth-child(2),#mobile-nav span:nth-child(3) {
+  top: 6px;
+}
+
+#mobile-nav span:nth-child(4) {
+  top: 12px;
+}
+
+#mobile-nav.open span:nth-child(1) {
+  top: 6px;
+  width: 0%;
+  left: 50%;
+}
+
+#mobile-nav.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#mobile-nav.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#mobile-nav.open span:nth-child(4) {
+  top: 6px;
+  width: 0%;
+  left: 50%;
+}
+
+#mobile-nav-drawer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  left: 0;
+  top: 73px;
+  @include transition(.5s);
+  transform: translateX(-100%);
+  z-index: 100;
+  display: none;
+
+  @include respond-max(950px) {
+    display: block;
+  }
+
+  &.open {
+    transform: translateX(0%);
+  }
+
+  .nav-links {
+    text-align: center;
+    position:  relative;
+    top: 15%;
+
+    .nav-item {
+      display: block;
+      color: $blue;
+      font-size: 20px;
+      line-height: 26px;
+      text-decoration: none;
+      @include transition(.3s);
+      position: relative;
+      margin-bottom: 25px;
+
+      &.active {
+        text-decoration: underline;
+      }
+
+    }
+
+    .button {
+      top: 30px;
+    }
+
+    .social {
+      width: 270px;
+      margin: 60px auto 0;
+
+      h5 {
+        float: left;
+        margin: 0 20px 0 0;
+      }
+      .icons {
+        display: flex;
+      }
+    }
+  }
 }

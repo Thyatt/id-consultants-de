@@ -17,10 +17,14 @@ class HomeController < ApplicationController
   def contact
   end
 
+  def infusion_center
+  end
+
   def comment
     @comment = PatientComment.new
 
     @comment.comment = params[:text]
+    @comment.contact = params[:contact]
 
     successs = @comment.save
 

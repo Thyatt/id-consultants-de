@@ -5,6 +5,36 @@
   margin-bottom: 2em;
   .physicians{
     margin: 0 auto;
+    
+    &.desktop {
+      @include respond-max($desktopSmall) {
+        display: none;
+      }  
+    }
+    
+    &.mobile {
+      display: none;
+      @include respond-max($desktopSmall) {
+        display: block;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .mobile-physician {
+        margin-bottom: 2em;
+        .divider {
+          margin-top: 2em;
+        }
+      }
+
+      h4 {
+        color: $darkBlue;
+        font-size: 1.2em
+      }
+    }
+    
   }
   h2{
     text-align: center;

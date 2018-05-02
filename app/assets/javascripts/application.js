@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require lib/modernizr-2.6.2.min
 //= require lib/plugins
+//= require lib/owl.carousel.min
 //= require lib/underscore
 //= require home

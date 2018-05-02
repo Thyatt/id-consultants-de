@@ -1,3 +1,3 @@
 class PatientComment < ActiveRecord::Base
-  attr_accessible :comment, :read
+  attr_accessible :comment, :contact, :read
 end

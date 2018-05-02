@@ -1,4 +1,11 @@
 <nav>
+    <div id="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
     <div class="top-nav">
       <a href="/" id="logo">
         <%= image_tag("IDC_Logo@2x.png") %>
@@ -12,7 +19,9 @@
         Appointments
       </a><div class="nav-divider"></div><a href="/resources" class="nav-item">
         Patient Resources
-      </a><div class="nav-divider"></div><a href="/contact" class="nav-item">
+      </a><div class="nav-divider"></div><a href="/infusion-center" class="nav-item">
+        Infusion Center
+    </a><div class="nav-divider"></div><a href="/contact" class="nav-item">
         Contact
       </a>
     </div>
@@ -21,3 +30,29 @@
     </a>
     <div class="clear"></div>
 </nav>
+
+<div id="mobile-nav-drawer">
+    <div class="nav-links ">
+        <a href="/" class="nav-item">
+                Home
+        </a>
+        <a href="/physicians" class="nav-item">
+            Our Team
+        </a>
+        <a href="/appointments" class="nav-item">
+            Appointments
+        </a>
+        <a href="/resources" class="nav-item">
+            Patient Resources
+        </a>
+        <a href="/infusion-center" class="nav-item">
+            Infusion Center
+        </a>
+        <a href="/contact" class="nav-item">
+            Contact
+        </a>
+        <a href="https://mycw101.ecwcloud.com/portal13786/jsp/login.jsp" target="_blank"  class="nav-item" id="patient-portal">
+            Visit Our Patient Portal
+        </a>
+    </div>
+</div>

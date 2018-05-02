@@ -19,3 +19,28 @@
     padding: 5px 0 0 0;
   }
 }
+
+#carousel {
+  margin-top: 60px;
+  .wide{
+    margin-top: 30%;
+  }
+  .owl-controls{
+    text-align: center;
+    padding: 30px 0;
+  }
+  .owl-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin: 0 7px;
+    display: inline-block;
+    border: 2px solid $red;
+    @include transition(.3s);
+
+    &.active{
+      background: $darkBlue;
+    }
+  }
+
+}
