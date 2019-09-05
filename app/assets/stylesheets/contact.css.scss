@@ -58,9 +58,10 @@
     @include respond-max($tablet) {
       width: 100%
     }
-    float: left;
+    margin: 0 auto;
     .office-info{
       width: 80%;
+      text-align: center;
       h6{
         color: $darkBlue;
         margin: 0;
