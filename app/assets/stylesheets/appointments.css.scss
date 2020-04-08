@@ -7,6 +7,14 @@
     text-align: center;
     margin-bottom: 0;
   }
+  .tele {
+    color: $brightRed;
+    text-decoration: underline;
+    @include transition(.2s);
+    &:hover {
+      color: $darkBlue;
+    }
+  }
   .forms{
     margin-top: 10px;
     h3{
