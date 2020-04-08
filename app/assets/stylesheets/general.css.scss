@@ -8,6 +8,20 @@ body{
   margin: 0 auto;
   color: $black;
   @include serif;
+  .banner {
+    background: $darkBlue;
+    text-align: center;
+    padding: 1rem 0;
+
+    a {
+      color: white;
+      text-decoration: underline;
+      @include transition(.2s);
+      &:hover {
+        color: $brightRed;
+      }
+    }
+  }
   a{
     color: $black;
     text-decoration: none;
