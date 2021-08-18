@@ -1,14 +1,13 @@
 source 'http://rubygems.org'
-ruby '2.1.5'
+ruby '2.6.5'
 
-gem 'rails', '~>4.0'            # Ruby on Rails framework
+gem 'rails', '4.2.11'
 gem 'pg'                        # PostgreSQL
 gem 'lograge'                   # Makes our prod logs much easier to grok
 gem 'puma'                      # A nice HTTP Server
 gem 'foreman'                   # Use unicorn locally
-gem 'paperclip'                 # For attaching files 
 gem 'protected_attributes'      # For protecting model from mass assignment attacks with attr_accessible
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', '1.4.3'
 
 # OPTIONAL GEMS - Pick your features
 
