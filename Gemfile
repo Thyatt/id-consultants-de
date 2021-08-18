@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 ruby '2.6.5'
 
 gem 'rails', '4.2.11'
-gem 'pg'                        # PostgreSQL
+gem 'pg', '~> 0.15'                        # PostgreSQL
 gem 'lograge'                   # Makes our prod logs much easier to grok
 gem 'puma'                      # A nice HTTP Server
 gem 'foreman'                   # Use unicorn locally
