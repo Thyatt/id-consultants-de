@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <link rel="icon" type="image/png" href="<%= image_path 'favicon.png' %>">
+        <title>ID Consultants Delaware</title>
+        <meta name="description" content="Infectious Disease Consultants Deleaware">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <%= stylesheet_link_tag    "application", :media => "all" %>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+    <div class="site-overlay overlay-scale">
+      <a href="#$" class="close">
+        <%= image_tag('close.png', class: 'close white') %>
+      </a>
+      <div class="jim-bio extended">
+        Dr. James Ley was born and raised in a suburb of Philadelphia. After high school, he studied at Pillsbury College, earning a Bachelor’s degree in Biblical Studies, Greek, and Pastoral Studies. In 1983, Dr. Ley received a B.S. degree in Chemistry and Biology at West Chester University. He continued his education at Pennsylvania State University College of Medicine at Hershey Medical Center, where he earned his M.D. degree in 1987.  Dr. Ley returned to Philadelphia for his Internal Medicine residency at Pennsylvania Hospital, followed by an Infectious Disease Fellowship, completed in 1992, at The University of Pennsylvania Hospital. Highlights of his medical education included training electives in Kenya and Uganda, which provided experience in both tropical medicine and mission’s work. His interest in missions also led him to provide general medical care for residents at a faith-based drug rehab center in Philadelphia.
+        <br/><br/>
+        Dr. Ley came to the Delmarva area in 1992, establishing medical practice at Union Hospital in Elkton, Christiana Hospital, Wilmington Hospital, and Saint Francis Hospital. Now in his 25th year of practice, Dr. Ley is a fellow of the American College of Physicians and maintains certification in Infectious Diseases by The American Board of Internal Medicine. Additionally, he is credentialed by Healogics Wound Care for wound care treatment.  Since 1999, he has been a wound care physician; previously at Christiana Care and currently at The Union Hospital Would Care Center.  Dr. Ley has also served as Chair of Medicine at Union Hospital, and in 2014, he was honored with the Physician of the Year award, by the Union Hospital medical staff.  Since 1992, he has treated tuberculosis patients, as chest clinic physician for the Cecil County Health Department.
+        <br/><br/>
+        Dr. Ley is married and has two children.  When he is not working, he enjoys fishing, hiking, volunteer work at his church, playing the piano, organ, accordion, and singing.
+      </div>
+      <div class="wes-bio extended">
+        Dr. Wesley Emmons practiced internal medicine for 4 years before completing an Infectious Diseases Fellowship at the National Naval Medical Center in Bethesda MD.  After serving a 1 year stint as a co-instructor at the US Navy’s Tropical Medicine School in San Juan, Puerto Rico, he did a 6 year tour as the Infectious Diseases and HIV Division Head at the Naval Medical Center in Portsmouth VA.  During his 13 years as a Naval physician, he lived in Puerto Rico and Cairo Egypt, and did tours of duty in Brazil and the Dominican Republic; his overseas experience allowed him to qualify and pass the ASTMH’s Certificate of Knowledge in Clinical Tropical Medicine and Traveler’s Health.He is a Fellow of the ACP and has published 20 manuscripts, written over 7 chapters, and edited numerous articles and 10 chapters for eMedicine and 4 other medical journals.  He has written Board questions for the ABIM’s Infectious Disease exam, the ASTMH’s Certificate of Knowledge exam, and the MKSAP.  He was voted “Teacher of the Year” 3 times in his career, has been selected as a Delaware “Top Doc” over 5 different times, and is widely sought after for his informative and entertaining lectures.  In 2004 he was selected for Christiana Care’s Maxwell Award for compassionate patient care.  He has been back in Delaware since 2001 where he enjoys spending time with his wife, children, and grandchildren.  Hobbies include SCUBA diving and going to the gym; the youngest participant to complete the New York Marathon in 1973, he once ran 100 miles in 23 hours (at the time a US record for a 21 year old); on another occasion, he did 1,111 situps.  He is also known throughout the hospital for his colorful outfits, specifically “Wacky Pants Wednesday” and “Hawaiian Shirt Friday”.
+      </div>
+    </div>
+    <%= render 'layouts/nav'%>
+    <%= yield %>
+    <%= render 'layouts/footer'%>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118615751-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118615751-1');
+    </script>
+
+    </body>
+</html>

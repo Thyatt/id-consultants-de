@@ -1,0 +1,222 @@
+$black: #565656;
+$brightRed: #F01E3D;
+$red: #96858F;
+$darkBlue: #003A69;
+$blue: #6D7993;
+$grey: #9099A2;
+$lightGrey: #eeeeee;
+
+$tablet: 768px;
+$desktop: 1200px;
+$desktopSmall: 900px;
+
+@mixin serif(){
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin sansSerif(){
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin respond-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin transition($time) {
+  -webkit-transition: $time;
+  -moz-transition: $time;
+  -ms-transition: $time;
+  transition: $time;
+}
+
+@mixin vertical-align() {
+  position: relative;
+  margin-top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#physicians{
+  margin-bottom: 2em;
+  .physicians{
+    margin: 0 auto;
+    
+    &.desktop {
+      @include respond-max($desktopSmall) {
+        display: none;
+      }  
+    }
+    
+    &.mobile {
+      display: none;
+      @include respond-max($desktopSmall) {
+        display: block;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .mobile-physician {
+        margin-bottom: 2em;
+        .divider {
+          margin-top: 2em;
+        }
+      }
+
+      h4 {
+        color: $darkBlue;
+        font-size: 1.2em
+      }
+    }
+    
+  }
+  h2{
+    text-align: center;
+    display: block;
+    margin: 0;
+    margin-bottom: 0;
+    color: $darkBlue;
+    padding: 1em 0 .5em;
+  }
+  .divider{
+    margin-bottom: 2em;
+  }
+  .physician{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+    padding-bottom: 1em;
+    @include respond-max($tablet){
+      width: 100%;
+    }
+    &.grey{
+      background: white;
+    }
+    .name{
+      width:100%;
+      display: block;
+      text-align: center;
+    }
+    .column{
+      display: block;
+      text-align: center;
+      img{
+        width: 100%;
+        display: block;
+      }
+      &.left{
+        float: left;
+        text-align: left;
+      }
+      &.right{
+        float: right;
+        text-align: right;
+      }
+      &.img{
+        width: 35%;
+        @include respond-max($tablet){
+          width: 100%;
+        }
+      }
+      &.info{
+        width: 65%;
+        @include respond-max($tablet){
+          width: 100%;
+        }
+      }
+    }
+    .bio-wrapper{
+      .bio-nav{
+        width: 20%;
+        display: block;
+        float: left;
+        text-align: left;
+        margin-left: 5%;
+        a{
+          display: block;
+          position: relative;
+          padding: 15px 0 15px 10px;
+          position: relative;
+          left: 1px;
+          border: 1px solid $darkBlue;
+          z-index:1;
+          color: $darkBlue;
+          &.active{
+            border-right: 1px solid white;
+            background: white;
+            color: $brightRed;
+          }
+          &:hover{
+            i{
+              -webkit-transform: translateX(5px);
+              -ms-transform: translateX(5px);
+              transform: translateX(5px);
+            }
+
+          }
+          i{
+            position: absolute;
+            right: 15px;
+            top: 11px;
+            font-size: 1.7em;
+            @include transition(.1s);
+            -webkit-transform: translateX(0px);
+            -ms-transform: translateX(0px);
+            transform: translateX(0px);
+          }
+        }
+      }
+      .bio-content{
+        width: calc(70% - 2px);
+        display: block;
+        position: relative;
+        text-align: left;
+        float: left;
+        border: 1px solid $darkBlue;
+        .licenses, .training, .education{
+          span{
+            margin-top: 5px;
+          }
+        }
+        div{
+          position: absolute;
+          top:0;
+          left: 0;
+          z-index: 1;
+          opacity: 0;
+          display: border-box;
+          padding: 0 30px;
+          @include transition(.3s);
+          &.show{
+            opacity:1;
+          }
+        }
+        .link{
+          color: $darkBlue;
+          display: block;
+          text-decoration: underline;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}

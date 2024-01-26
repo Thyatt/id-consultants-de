@@ -1,0 +1,75 @@
+$black: #565656;
+$brightRed: #F01E3D;
+$red: #96858F;
+$darkBlue: #003A69;
+$blue: #6D7993;
+$grey: #9099A2;
+$lightGrey: #eeeeee;
+
+$tablet: 768px;
+$desktop: 1200px;
+$desktopSmall: 900px;
+
+@mixin serif(){
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin sansSerif(){
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin respond-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin transition($time) {
+  -webkit-transition: $time;
+  -moz-transition: $time;
+  -ms-transition: $time;
+  transition: $time;
+}
+
+@mixin vertical-align() {
+  position: relative;
+  margin-top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#resources{
+  a{
+    color: $brightRed;
+    border-bottom: 2px solid transparent;
+    display: inline;
+    display: inline-block;
+    @include transition(.3s);
+    &:hover{
+      border-bottom: 2px solid $darkBlue;
+    }
+  }
+  h2{
+    display: block;
+  }
+  .block{
+    padding: 0 1em;
+    margin-top: 0;
+  }
+  .further{
+    .link{
+      margin: 5px 0;
+      display: block;
+    }
+  }
+}
