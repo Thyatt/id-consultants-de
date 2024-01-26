@@ -21,23 +21,7 @@ function mobileNav() {
 }
 
 function infusionCarousel() {
-    var $owl = $('#carousel').owlCarousel({
-        autoplay: true,
-        startPosition: 3,
-        center: true,
-        loop: true,
-        dots: true,
-        margin: 20,
-        stagePadding: 50,
-        responsive : {
-                0 : {
-                    items: 1
-                },
-                768 : {
-                    items: 3
-                 }
-        }
-    })
+
 }
 
 function contactForm(){
